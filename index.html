@@ -16,7 +16,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#services">Services</a></li>
-            <li><a href="#feedback">FeedBack</a></li>
+            <li><a href="#contact">Contact Us</a></li>
             
         </ul>
        
@@ -113,17 +113,37 @@
             <img src="https://source.unsplash.com/900x900/?javascript,apple, nature, happy" alt="laptop image" class="imgFluid">
         </div>
     </section>
-     <form action="https://formspree.io/f/mzbygpdy" method="POST" id="my-form">
-        <section class="contact" id="contact">
+     
+        <section  class="contact" id="contact">
             <h1 class="text-center">Contact Us</h1>
-            <div class="form">
-                <input class="form-input" type="text" name="name" id="name" placeholder="Enter Your name">
-                <input class="form-input" type="text" name="phone" id="phone" placeholder="Enter Your Phone">
-                <input class="form-input" type="email" name="email" id="email" placeholder="Enter Your email">
-                 <textarea class="form-input" name="text" id="text" cols="30" rows="10" placeholder="Ellaborate your concern"></textarea>
-                <button class="btn btn-sm btn-dark">Submit</button>
+            <div class="container">
+              <form action="https://formspree.io/f/meqvkqak" method="POST" id="my-form">
+          
+                <div class="form-group">
+                  <label for="firstName"> First Name</label>
+                  <input type="text" id="firstName" name="firstName">
+                </div>
+          
+                <div class="form-group">
+                  <label for="latsName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName">
+                </div>
+          
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email">
+                </div>
+          
+                <div class="form-group">
+                  <label for="massage">Massage</label>
+                  <textarea name="massage" id="massage" cols="30" rows="10"></textarea>
+                </div>
+          
+                <button type="submit">Submit</button>
+              </form>
             </div>
-        </section>
+            <div id="status"></div>
+          </section>
     <!-- <p100
     >
         
@@ -138,8 +158,32 @@
         </p>
     </footer>
     <script src="js/resp.js"></script>
+    <script src="formspee.js"></script>
+
 
 </body>
-
+<!-- <script>
+    var form = document.getElementById("my-form");
+    
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var status = document.getElementById("my-form-status");
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        status.innerHTML = "Thanks for your submission!";
+        form.reset()
+      }).catch(error => {
+        status.innerHTML = "Oops! There was a problem submitting your form"
+      });
+    }
+    form.addEventListener("submit", handleSubmit)
+</script>
+ -->
 
 </html>
